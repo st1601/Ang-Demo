@@ -1,1 +1,28 @@
-<p>main works!</p>
+<h1>{{ name }}</h1>
+<!-- <h1 [innerText]="name"></h1> -->
+<p>{{ name }}</p>
+<!-- <a href="{{ googleURL }}" target="_blank">Go to Google</a><br /> -->
+<a [href]="googleURL" target="_blank">Go to Google</a><br />
+<input type="text" [value]="name" /><br /><br />
+<table>
+  <tr>
+    <th [attr.colspan]="colSpan">Name</th>
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td>
+    <td>43</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>57</td>
+  </tr>
+</table>
+<button class="btn btn-primary" (click)="onBtnClick()">Click me</button>
+<div>
+  <button class="btn btn-primary" (click)="BtnR()">+</button>
+  <h3>{{ count }}</h3>
+  <button class="btn btn-primary" (click)="BtnA($event)">-</button>
+</div>
