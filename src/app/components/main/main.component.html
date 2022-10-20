@@ -22,7 +22,34 @@
 </table>
 <button class="btn btn-primary" (click)="onBtnClick()">Click me</button>
 <div>
-  <button class="btn btn-primary" (click)="BtnR()">+</button>
+  <button class="btn btn-primary" (click)="BtnR()">-</button>
   <h3>{{ count }}</h3>
-  <button class="btn btn-primary" (click)="BtnA($event)">-</button>
+  <button class="btn btn-primary" (click)="BtnA($event)">+</button>
+</div>
+<input type="text" [(ngModel)]="name" (keyup.enter)="onClick()" />
+<ul>
+  <li *ngFor="let item of listTodoB">
+    {{ item.content }}
+    <button class="btn btn-primary" (click)="BtnD(item.content)">Delete</button>
+    <button
+      class="btn btn-primary text-decoration-line"
+      (click)="BtnC(item.id)"
+    >
+      Complete
+    </button>
+  </li>
+</ul>
+<button class="btn btn-primary mx-5" (click)="onClick()">Add To do</button>
+<div *ngIf="temp">
+  <h1>Hello World</h1>
+</div>
+<div *ngIf="temp; else Block">
+  <h1>Hello World</h1>
+</div>
+<div #Block>Condition is Fail</div>
+<div [ngSwitch]="colSpan">
+  <div *ngSwitchCase="1">Output 1</div>
+  <div *ngSwitchCase="2">Output 2</div>
+  <div *ngSwitchCase="3">Output 3</div>
+  <div *ngSwitchDefault="1">Default</div>
 </div>
