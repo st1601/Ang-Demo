@@ -1,8 +1,8 @@
 <h1>{{ name }}</h1>
-<!-- <h1 [innerText]="name"></h1> -->
+<h1 [innerText]="name"></h1>
 <p>{{ name }}</p>
-<!-- <a href="{{ googleURL }}" target="_blank">Go to Google</a><br /> -->
-<!-- <a [href]="googleURL" target="_blank">Go to Google</a><br />
+<a href="{{ googleURL }}" target="_blank">Go to Google</a><br />
+--> <a [href]="googleURL" target="_blank">Go to Google</a><br />
 <input type="text" [value]="name" /><br /><br />
 <table>
   <tr>
@@ -53,9 +53,9 @@
   <div *ngSwitchCase="2">Output 2</div>
   <div *ngSwitchCase="3">Output 3</div>
   <div *ngSwitchDefault="1">Default</div>
-</div> -->
+</div>
 <!-- class binding -->
-<!-- <ul class="nav nav-tabs">
+<ul class="nav nav-tabs">
   <li class="nav-item">
     <a
       class="nav-link"
@@ -86,15 +86,15 @@
   <li class="nav-item">
     <a class="nav-link disabled" href="#">Disabled</a>
   </li>
-</ul> -->
+</ul>
 <!-- style binding -->
-<!-- <p class="text-capitalize" [style.color]="'red'">
+<p class="text-capitalize" [style.color]="'red'">
   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum consectetur
   rerum ducimus, placeat perferendis illo nesciunt fugit totam obcaecati quas
   fuga similique molestias ab! Voluptatibus magni nobis assumenda a voluptas.
 </p>
 <input type="text" [(ngModel)]="userName" (blur)="onBlur()" />
-<h2>{{ userName }}</h2> -->
+<h2>{{ userName }}</h2>
 
 <div class="row mt-5">
   <div class="col-4">
