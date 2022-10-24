@@ -37,7 +37,10 @@ export class MainComponent implements OnInit {
   googleURL: string = 'http://google.com';
   colSpan = 2;
   count: number = 0;
+  selectedNavTab = 'tab1';
   temp: boolean = false;
+  userName = 'Bin Son';
+  newTodo: string = '';
   constructor() {}
 
   ngOnInit(): void {}
@@ -48,7 +51,6 @@ export class MainComponent implements OnInit {
     this.listTodo.push(this.name);
     this.name = '';
   }
-
   BtnR() {
     // this.count = this.count - 1;
     this.count -= 1;
@@ -66,4 +68,64 @@ export class MainComponent implements OnInit {
     console.log('event');
     this.count = this.count + 1;
   }
+  BtnTab(value) {
+    this.selectedNavTab = value;
+  }
+  getTitle() {
+    return 'Count :';
+  }
+  onBlur() {
+    console.log(this.userName);
+  }
+  deleteTodo(index) {
+    this.todos.splice(index, 1);
+  }
+  addNewTodo(input) {
+    console.log(input.value);
+    this.todos.push({
+      userID: 1,
+      title: this.newTodo,
+      completed: false,
+    });
+  }
+  toogleTodo(i) {
+    this.todos[i].completed = !this.todos[i].completed;
+  }
+  todos: {
+    userID: number;
+    id?: number | string;
+    title: string;
+    completed: boolean;
+  }[] = [
+    {
+      userID: 1,
+      id: 1,
+      title: 'Bin',
+      completed: false,
+    },
+    {
+      userID: 1,
+      id: 2,
+      title: 'Son',
+      completed: false,
+    },
+    {
+      userID: 1,
+      id: 3,
+      title: 'Nguyen',
+      completed: false,
+    },
+    {
+      userID: 1,
+      id: 4,
+      title: 'Thi',
+      completed: true,
+    },
+    {
+      userID: 1,
+      id: 5,
+      title: 'Tran',
+      completed: false,
+    },
+  ];
 }

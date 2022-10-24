@@ -2,7 +2,7 @@
 <!-- <h1 [innerText]="name"></h1> -->
 <p>{{ name }}</p>
 <!-- <a href="{{ googleURL }}" target="_blank">Go to Google</a><br /> -->
-<a [href]="googleURL" target="_blank">Go to Google</a><br />
+<!-- <a [href]="googleURL" target="_blank">Go to Google</a><br />
 <input type="text" [value]="name" /><br /><br />
 <table>
   <tr>
@@ -23,7 +23,8 @@
 <button class="btn btn-primary" (click)="onBtnClick()">Click me</button>
 <div>
   <button class="btn btn-primary" (click)="BtnR()">-</button>
-  <h3>{{ count }}</h3>
+  <h3>{{ "Count : " + count }}</h3>
+  <h3>{{ getTitle() + count }}</h3>
   <button class="btn btn-primary" (click)="BtnA($event)">+</button>
 </div>
 <input type="text" [(ngModel)]="name" (keyup.enter)="onClick()" />
@@ -52,4 +53,77 @@
   <div *ngSwitchCase="2">Output 2</div>
   <div *ngSwitchCase="3">Output 3</div>
   <div *ngSwitchDefault="1">Default</div>
+</div> -->
+<!-- class binding -->
+<!-- <ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      [class.active]="selectedNavTab === 'tab1'"
+      (click)="BtnTab('tab1')"
+      href="#"
+      >Active</a
+    >
+  </li>
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      [class.active]="selectedNavTab === 'tab2'"
+      (click)="selectedNavTab = 'tab2'"
+      href="#"
+      >Tab</a
+    >
+  </li>
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      [class.active]="selectedNavTab === 'tab3'"
+      (click)="BtnTab('tab3')"
+      href="#"
+      >Link</a
+    >
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#">Disabled</a>
+  </li>
+</ul> -->
+<!-- style binding -->
+<!-- <p class="text-capitalize" [style.color]="'red'">
+  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum consectetur
+  rerum ducimus, placeat perferendis illo nesciunt fugit totam obcaecati quas
+  fuga similique molestias ab! Voluptatibus magni nobis assumenda a voluptas.
+</p>
+<input type="text" [(ngModel)]="userName" (blur)="onBlur()" />
+<h2>{{ userName }}</h2> -->
+
+<div class="row mt-5">
+  <div class="col-4">
+    <form>
+      <div class="form-group">
+        <label>Todo name:</label>
+        <input
+          type="text"
+          name="newTodo"
+          #todoInput
+          class="form-control"
+          [(ngModel)]="newTodo"
+          (keyup.enter)="addNewTodo(todoInput)"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+  </div>
+  <div class="col8">
+    <ul class="list-group">
+      <li
+        class="list-group-item text-capitalize d-flex justify-content-between"
+        *ngFor="let todo of todos; let i = index"
+      >
+        <span [class.completed]="todo.completed" (click)="toogleTodo(i)"
+          >{{ i + 1 }}.{{ todo.title }}</span
+        >
+        <button class="btn btn-danger" (click)="deleteTodo(i)">Delete</button>
+      </li>
+    </ul>
+  </div>
 </div>
